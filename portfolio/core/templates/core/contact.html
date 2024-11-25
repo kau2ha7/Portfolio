@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+{% block body %}
+  <div class="contact" id="contact">
+    <div class="content-inner">
+      <div class="content-header">
+        <h2>Contact</h2>
+      </div>
+      <div class="col-md-10 mx-auto">
+        <div class="form">
+          <form action="" method="POST" novalidate class="shadow p-5">
+            {% csrf_token %}
+            {% for fm in form %}
+              <div class="form-group row">
+                <label for="{{ fm.id_for_label }}" class="col-sm-3 col-form-label">{{ fm.label }}</label>
+                <div class="col-sm-9">
+                  {{ fm }}
+                  <small class="text-danger">{{ fm.errors|striptags }}</small>
+                </div>
+              </div>
+            {% endfor %}
+            <div class="form-group row">
+              <div class="col-sm-9 offset-sm-3">
+                <input type="submit" value="Save" class="btn btn-primary mt-4" />
+              </div>
+            </div>
+            {% if form.non_field_errors %}
+              {% for error in form.non_field_errors %}
+                <div class="form-group row">
+                  <div class="col-sm-12">
+                    <p class="alert alert-danger">{{ error }}</p>
+                  </div>
+                </div>
+              {% endfor %}
+            {% endif %}
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block body %}
+<div class="about" id="about">
+                    <div class="content-inner">
+                        <div class="content-header">
+                            <h2>About Me</h2>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6 col-lg-5">
+                                <img src="{% static 'img/about.jpg' %}" alt="Image">
+                            </div>
+                            <div class="col-md-6 col-lg-7">
+                                <p>
+                                    Hi there! My Name is <b>Kaushal Joshi</b>, an aspiring <b>Backend Developer</b>. My proficiency lies in <b>Python</b> as my language. So far, the projects I have developed are built using <b>Django Webframework</b> and, I have a strong command on its default database <b>SQLite</b>. As of Now, I am learning <b>Django Rest Framwork</b> and <b>WebSockets</b> to broaden my capabilities. I enjoy working with like-minded developers on <b>Challenging</b> and <b>Rewarding</b> projects. Let us <b>Connect</b> and make things happen!
+                                </p>
+                                <a class="btn" href="#">Hire Me</a>
+                            </div>
+                        </div>
+
+{% endblock body %}
